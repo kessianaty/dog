@@ -16,8 +16,9 @@ export default function App() {
   },[])
 
   return (
+  <ImageBackground source={require('./assets/fundo.jpg')} resizeMode="cover" style={styles.back}>
     <View style={styles.container}>
-      <ImageBackground source={require('./assets/fundo.jpg')} resizeMode="cover" style={styles.back}>
+      
       <ScrollView>
       <Text style={styles.titulo}>Doguinhos</Text>
       <FlatList 
@@ -28,13 +29,12 @@ export default function App() {
         <Text>Nome: {item.name}{'\n'}</Text>
         <Text>Temperamento: {item.temperament}{'\n'}</Text>
         <Text>Expectativa de vida: {item.life_span}{'\n'}</Text>
-      </Text>
-    }
+      </Text>}
       />
       <StatusBar style="auto" />
       </ScrollView>
-      </ImageBackground>
-    </View>
+      </View>
+    </ImageBackground>
   );
 }
 
@@ -48,6 +48,9 @@ const styles = StyleSheet.create({
     paddingTop: 25,
     paddingBottom:25,
   },
+  itemText: {
+    color: '#000',
+  },
   itens:{
     flex: 1,
     marginBottom: 10,
@@ -59,7 +62,6 @@ const styles = StyleSheet.create({
     paddingBottom:10,
     textAlign: 'center',
     paddingVertical: 10,
-    color: '#000',
     fontSize: 20
   },
   titulo:{
